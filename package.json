@@ -6,22 +6,31 @@
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
-		"lint": "next lint"
+		"lint": "next lint",
+		"sync": "ts-node ./sync.ts"
 	},
 	"dependencies": {
 		"@next/font": "13.1.6",
 		"@sendgrid/mail": "^7.7.0",
+		"@types/jsonwebtoken": "^9.0.1",
 		"@types/node": "18.11.18",
+		"@types/random-seed": "^0.3.3",
 		"@types/react": "18.0.27",
 		"@types/react-dom": "18.0.10",
 		"algoliasearch": "^4.14.3",
 		"cloudinary": "^1.33.0",
+		"date-fns": "^2.29.3",
+		"jsonwebtoken": "^9.0.0",
 		"micro-method-router": "^0.1.0",
 		"next": "13.1.6",
+		"pg": "^8.9.0",
+		"pg-hstore": "^2.3.4",
+		"random-seed": "^0.3.0",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
 		"sequelize": "^6.28.0",
-		"typescript": "4.9.4"
+		"typescript": "4.9.4",
+		"yup": "^0.32.11"
 	},
 	"devDependencies": {
 		"ts-standard": "^12.0.2"
