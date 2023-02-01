@@ -4,7 +4,7 @@ import { addMinutes, isCodeExpired } from '@/lib/date-fns'
 import { generateToken } from '@/lib/jwt'
 import { random } from '@/lib/random-seed'
 import { sendEmail } from '@/lib/sendgrid'
-import { UserBodyData } from '@/lib/types'
+import { UserSignupData } from '@/lib/types'
 
 //find auth by email
 export async function findAuth(email: string) {
@@ -23,7 +23,7 @@ export async function findAuth(email: string) {
 }
 
 //create user and his auth element if it doesn't exist
-export async function findOrCreateAuth(data: UserBodyData) {
+export async function findOrCreateAuth(data: UserSignupData) {
 	const { email, fullName, address } = data
 	try {
 		const [user, created] = await User.findOrCreate({
@@ -48,6 +48,7 @@ export async function findOrCreateAuth(data: UserBodyData) {
 		console.error(error)
 	}
 }
+
 //sending the code for login
 export async function sendCode(email: string) {
 	try {
