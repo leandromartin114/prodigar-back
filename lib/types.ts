@@ -27,4 +27,20 @@ type LocationData = {
 	lng: number
 }
 
-export type { UserSignupData, UserUpdateData, NewItemData, LocationData }
+type NewContactData = {
+	fullName: string
+	phoneNumber: number
+	email: string
+	message: string
+	itemTitle: string
+	itemEmail: string
+	itemId?: number
+}
+
+export type {
+	UserSignupData,
+	UserUpdateData,
+	NewItemData,
+	LocationData,
+	NewContactData,
+}

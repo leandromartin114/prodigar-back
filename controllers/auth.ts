@@ -3,7 +3,7 @@ import { User } from '../models'
 import { addMinutes, isCodeExpired } from '@/lib/date-fns'
 import { generateToken } from '@/lib/jwt'
 import { random } from '@/lib/random-seed'
-import { sendEmail } from '@/lib/sendgrid'
+import { sendCodeByEmail } from '@/lib/sendgrid'
 import { UserSignupData } from '@/lib/types'
 
 //find auth by email
@@ -62,7 +62,7 @@ export async function sendCode(email: string) {
 		await Auth.update(newAuthData, {
 			where: { email: email },
 		})
-		await sendEmail(email, code)
+		await sendCodeByEmail(email, code)
 		return code
 	} catch (error) {
 		console.error(error)
