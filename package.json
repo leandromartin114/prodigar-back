@@ -12,6 +12,7 @@
 	"dependencies": {
 		"@next/font": "13.1.6",
 		"@sendgrid/mail": "^7.7.0",
+		"@types/cors": "^2.8.13",
 		"@types/jsonwebtoken": "^9.0.1",
 		"@types/node": "18.11.18",
 		"@types/random-seed": "^0.3.3",
@@ -23,6 +24,8 @@
 		"jsonwebtoken": "^9.0.0",
 		"micro-method-router": "^0.1.0",
 		"next": "13.1.6",
+		"nextjs-cors": "^2.1.2",
+		"parse-bearer-token": "^1.0.1",
 		"pg": "^8.9.0",
 		"pg-hstore": "^2.3.4",
 		"random-seed": "^0.3.0",

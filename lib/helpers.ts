@@ -34,3 +34,7 @@ export function bodyToIndex(body: NewItemData, id: number) {
 	}
 	return result
 }
+
+export function emailCleaner(email: string) {
+	return email.trim().toLowerCase()
+}

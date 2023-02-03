@@ -7,14 +7,3 @@ export const Auth = sequelize.define('auth', {
 	code: DataTypes.INTEGER,
 	expires: DataTypes.DATE,
 })
-
-// export class Auth extends Model {}
-
-// Auth.init(
-// 	{
-// 		email: DataTypes.STRING,
-// 		password: DataTypes.STRING,
-// 		userId: DataTypes.INTEGER,
-// 	},
-// 	{ sequelize, modelName: "auth", freezeTableName: true, tableName: "auths" }
-// );
