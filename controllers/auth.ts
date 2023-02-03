@@ -82,7 +82,7 @@ export async function sendToken(email: string, code: number) {
 			const expired = isCodeExpired(expiredDate)
 			if (expired) {
 				console.error('Code Expired')
-				return false
+				return 'Expired'
 			} else {
 				const token = generateToken({ userId: authFound.get('id') })
 				const now = new Date()

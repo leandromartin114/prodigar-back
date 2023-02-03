@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken'
 
 export function generateToken(obj: any) {
-	const token = jwt.sign(obj, process.env.JWT_SECRET as string)
+	const token = jwt.sign(obj, process.env.NEXT_PUBLIC_JWT_SECRET as string)
 	return token
 }
 

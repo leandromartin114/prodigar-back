@@ -41,3 +41,5 @@ let contactBodySchema = yup
 	})
 	.noUnknown(true)
 	.strict()
+
+export { userBodySchema, querySchema, itemBodySchema, contactBodySchema }
