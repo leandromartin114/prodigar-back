@@ -6,7 +6,7 @@ export function bodyToIndex(body: NewItemData, id: number) {
 		result.objectID = id
 	}
 	if (body.fullName) {
-		result.location = body.fullName
+		result.fullName = body.fullName
 	}
 	if (body.title) {
 		result.title = body.title
@@ -40,6 +40,6 @@ export function emailCleaner(email: string) {
 }
 
 export function stringToNumb(number: string) {
-	const result = parseInt(number)
+	const result = parseFloat(number)
 	return result
 }

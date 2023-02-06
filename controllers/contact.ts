@@ -1,4 +1,4 @@
-import { Contact } from '@/models'
+import { Contact } from '../models'
 import { sendContactEmail } from '@/lib/sendgrid'
 import { NewContactData } from 'lib/types'
 

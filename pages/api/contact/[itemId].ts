@@ -11,7 +11,7 @@ async function postHandler(req: NextApiRequest, res: NextApiResponse) {
 	const query = req.query.itemId.toString()
 	const itemId = stringToNumb(query)
 	try {
-		const newContact = createContact(itemId, req.body)
+		const newContact = await createContact(itemId, req.body)
 		res.status(200).send(newContact)
 	} catch (error) {
 		res.status(400).send({ message: 'error: ' + error })

@@ -28,7 +28,8 @@ export async function updateUser(userId: number, data: UserUpdateData) {
 		const authUpdated = await Auth.update(dataForAuth, {
 			where: { userId: userId },
 		})
-		return userUpdated
+		const newUserData = await User.findByPk(userId)
+		return newUserData
 	} catch (error) {
 		console.log(error)
 	}

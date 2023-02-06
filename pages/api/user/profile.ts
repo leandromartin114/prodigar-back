@@ -6,7 +6,7 @@ import { authMiddleware, CORSMiddleware } from '@/lib/middlewares'
 // Get the profile user data
 async function getHandler(req: NextApiRequest, res: NextApiResponse, token) {
 	try {
-		const data = getUserData(token.userId)
+		const data = await getUserData(token.userId)
 		res.status(200).send(data)
 	} catch (error) {
 		res.status(400).send({ message: 'error ' + error })

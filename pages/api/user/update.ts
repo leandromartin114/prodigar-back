@@ -9,23 +9,23 @@ import {
 import { userBodySchema } from '@/lib/schemas'
 
 // Update user data
-async function postHandler(req: NextApiRequest, res: NextApiResponse, token) {
+async function putHandler(req: NextApiRequest, res: NextApiResponse, token) {
 	try {
-		const updatedData = updateUser(token.userId, req.body)
-		res.status(200).send(updatedData)
+		const newUserData = await updateUser(token.userId, req.body)
+		res.status(200).send(newUserData)
 	} catch (error) {
 		res.status(400).send({ message: 'error ' + error })
 	}
 }
 
 // validate the body with the schema
-const verifiedHandler = bodyMiddleware(userBodySchema, postHandler)
+const verifiedHandler = bodyMiddleware(userBodySchema, putHandler)
 
 // auth mid validation
-const authPostHandler = authMiddleware(verifiedHandler)
+const authPutHandler = authMiddleware(verifiedHandler)
 
 const handler = method({
-	post: authPostHandler,
+	put: authPutHandler,
 })
 
 export default CORSMiddleware(handler)

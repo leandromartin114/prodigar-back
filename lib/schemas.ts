@@ -15,10 +15,10 @@ let userBodySchema = yup
 let itemBodySchema = yup
 	.object()
 	.shape({
+		fullName: yup.string().required(),
 		title: yup.string().required(),
 		description: yup.string().required(),
-		imgURL: yup.string().required(),
-		location: yup.string().required(),
+		imgURL: yup.string(),
 		lat: yup.number().required(),
 		lng: yup.number().required(),
 		state: yup.string().required(),
@@ -35,7 +35,6 @@ let contactBodySchema = yup
 		phoneNumber: yup.number().required(),
 		email: yup.string().email().required(),
 		message: yup.string().required(),
-		itemId: yup.number().required(),
 		itemTitle: yup.string().required(),
 		itemEmail: yup.string().email().required(),
 	})

@@ -102,7 +102,8 @@ export async function updateItem(itemId: number, data: NewItemData) {
 		)
 		const indexFormatted = bodyToIndex(data, itemId)
 		const indexUpdated = await index.partialUpdateObject(indexFormatted)
-		return itemUpdated
+		const newItemData = await Item.findByPk(itemId)
+		return newItemData
 	}
 }
 
