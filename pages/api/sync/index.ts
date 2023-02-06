@@ -1,19 +1,19 @@
 import method from 'micro-method-router'
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { getItemsNearBy } from '@/controllers/item'
+import { sequelize } from '@/models/connection'
+import 'models'
 import { CORSMiddleware } from '@/lib/middlewares'
-import { stringToNumb } from '@/lib/helpers'
 
-// Find items near your location
+// Sync or reset the DB
 async function getHandler(req: NextApiRequest, res: NextApiResponse) {
-	const queryLat = req.query.lat as string
-	const queryLng = req.query.lng as string
-	const lat = stringToNumb(queryLat)
-	const lng = stringToNumb(queryLng)
-	const location = { lat, lng }
 	try {
-		const items = await getItemsNearBy(location)
-		res.status(200).send(items)
+		sequelize.sync({ alter: true }).then((response) => {
+			console.log(response)
+		})
+		res.status(200).send({ message: 'DB sync ok' })
+
+		// use this for complete base reset with command yarn sync
+		// sequelize.sync({ force: true }).then((res) => console.log(res))
 	} catch (error) {
 		res.status(400).send({ message: 'error: ' + error })
 	}

@@ -2,11 +2,11 @@ import { Sequelize } from 'sequelize'
 
 export const sequelize = new Sequelize({
 	dialect: 'postgres',
-	username: process.env.SEQUELIZE_CREDS_USERNAME,
-	password: process.env.SEQUELIZE_CREDS_PASSWORD,
-	database: process.env.SEQUELIZE_CREDS_DATABASE,
+	username: process.env.NEXT_PUBLIC_SEQUELIZE_CREDS_USERNAME,
+	password: process.env.NEXT_PUBLIC_SEQUELIZE_CREDS_PASSWORD,
+	database: process.env.NEXT_PUBLIC_SEQUELIZE_CREDS_DATABASE,
 	port: 5432,
-	host: process.env.SEQUELIZE_CREDS_HOST,
+	host: process.env.NEXT_PUBLIC_SEQUELIZE_CREDS_HOST,
 	ssl: true,
 	dialectOptions: {
 		ssl: {
