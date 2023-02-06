@@ -1,5 +1,7 @@
 import * as yup from 'yup'
 
+let querySchema = yup.mixed()
+
 let userBodySchema = yup
 	.object()
 	.shape({
@@ -9,8 +11,6 @@ let userBodySchema = yup
 	})
 	.noUnknown(true)
 	.strict()
-
-let querySchema = yup.mixed()
 
 let itemBodySchema = yup
 	.object()

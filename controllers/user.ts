@@ -35,7 +35,7 @@ export async function updateUser(userId: number, data: UserUpdateData) {
 }
 
 //getting all published items by a user
-export async function getAllItems(userId: number) {
+export async function getUserItems(userId: number) {
 	try {
 		const items = await Item.findAll({
 			where: { userId: userId },

@@ -5,14 +5,14 @@ export function bodyToIndex(body: NewItemData, id: number) {
 	if (id) {
 		result.objectID = id
 	}
+	if (body.fullName) {
+		result.location = body.fullName
+	}
 	if (body.title) {
 		result.title = body.title
 	}
 	if (body.description) {
 		result.description = body.description
-	}
-	if (body.location) {
-		result.location = body.location
 	}
 	if (body.lat && body.lng) {
 		result._geoloc = {
@@ -37,4 +37,9 @@ export function bodyToIndex(body: NewItemData, id: number) {
 
 export function emailCleaner(email: string) {
 	return email.trim().toLowerCase()
+}
+
+export function stringToNumb(number: string) {
+	const result = parseInt(number)
+	return result
 }

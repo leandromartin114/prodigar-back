@@ -14,10 +14,10 @@ export async function createItem(userId: number, data: NewItemData) {
 			width: 500,
 		})
 		const newItem = await Item.create({
+			fullName: data.fullName,
 			title: data.title,
 			description: data.description,
 			imgURL: image.secure_url,
-			location: data.location,
 			lat: data.lat,
 			lng: data.lng,
 			state: data.state,
@@ -25,10 +25,10 @@ export async function createItem(userId: number, data: NewItemData) {
 			userId: userId,
 		})
 		const dataForIndex = {
+			fullName: data.fullName,
 			title: data.title,
 			description: data.description,
 			imgURL: image.secure_url,
-			location: data.location,
 			lat: data.lat,
 			lng: data.lng,
 			state: data.state,
@@ -43,10 +43,10 @@ export async function createItem(userId: number, data: NewItemData) {
 		return newItem
 	} else {
 		const newItem = await Item.create({
+			fullName: data.fullName,
 			title: data.title,
 			description: data.description,
 			imgURL: 'img',
-			location: data.location,
 			lat: data.lat,
 			lng: data.lng,
 			state: data.state,
@@ -60,7 +60,7 @@ export async function createItem(userId: number, data: NewItemData) {
 }
 
 //Update an item
-export async function uptadeItem(itemId: number, data: NewItemData) {
+export async function updateItem(itemId: number, data: NewItemData) {
 	let image
 	if (data.imgURL) {
 		image = await cloudinary.uploader.upload(data.imgURL, {
@@ -70,10 +70,10 @@ export async function uptadeItem(itemId: number, data: NewItemData) {
 		})
 		const itemUpdated = await Item.update(
 			{
+				fullName: data.fullName,
 				title: data.title,
 				description: data.description,
 				imgURL: image.secure_url,
-				location: data.location,
 				lat: data.lat,
 				lng: data.lng,
 				state: data.state,

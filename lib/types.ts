@@ -11,10 +11,10 @@ type UserUpdateData = {
 }
 
 type NewItemData = {
+	fullName: string
 	title: string
 	description: string
 	imgURL: string
-	location: string
 	lat: number
 	lng: number
 	state: string

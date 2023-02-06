@@ -10,12 +10,12 @@ async function postHandler(req: NextApiRequest, res: NextApiResponse) {
 		const email = emailCleaner(req.body.email)
 		const code = await sendCode(email)
 		if (code) {
-			return res.status(200).send({ message: 'the code was sent to ' + email })
+			res.status(200).send({ message: 'the code was sent to ' + email })
 		} else {
-			return res.status(400).send({ message: "the user doesn't exist" })
+			res.status(400).send({ message: "the user doesn't exist" })
 		}
 	} catch (error) {
-		return res.status(400).send({ message: 'error: ' + error })
+		res.status(400).send({ message: 'error: ' + error })
 	}
 }
 

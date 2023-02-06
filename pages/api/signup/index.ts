@@ -10,18 +10,19 @@ async function postHandler(req: NextApiRequest, res: NextApiResponse) {
 	try {
 		const newAuth = await findOrCreateAuth(req.body)
 		if (!newAuth) {
-			return res.status(400).send({ message: 'The user already exists' })
+			res.status(400).send({ message: 'The user already exists' })
 		} else {
 			await sendCode(req.body.email)
-			return res
+			res
 				.status(200)
 				.send({ message: 'the code was sent to ' + req.body.email })
 		}
 	} catch (error) {
-		return res.status(400).send({ message: 'error: ' + error })
+		res.status(400).send({ message: 'error: ' + error })
 	}
 }
 
+// validate the body with the schema
 const verifiedHandler = bodyMiddleware(userBodySchema, postHandler)
 
 const handler = method({
