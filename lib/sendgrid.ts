@@ -1,7 +1,7 @@
 import * as sgMail from '@sendgrid/mail'
 import { NewContactData } from 'lib/types'
 
-sgMail.setApiKey(process.env.NEXT_PUBLIC_SENDGRID_CREDS_APIKEY as string)
+sgMail.setApiKey(process.env.SENDGRID_CREDS_APIKEY as string)
 
 // Sending the code for auth/login
 export async function sendCodeByEmail(email: string, code: number) {
