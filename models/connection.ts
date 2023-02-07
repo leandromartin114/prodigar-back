@@ -1,7 +1,9 @@
+import * as pg from 'pg'
 import { Sequelize } from 'sequelize'
 
 export const sequelize = new Sequelize({
 	dialect: 'postgres',
+	dialectModule: pg,
 	username: process.env.NEXT_PUBLIC_SEQUELIZE_CREDS_USERNAME,
 	password: process.env.NEXT_PUBLIC_SEQUELIZE_CREDS_PASSWORD,
 	database: process.env.NEXT_PUBLIC_SEQUELIZE_CREDS_DATABASE,
