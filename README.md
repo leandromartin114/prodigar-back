@@ -8,11 +8,11 @@ location through Algolia DB.
 
 ## Backend Demo
 
-[Postman]()
+[Postman](https://documenter.getpostman.com/view/20242333/2s935poiBJ)
 
 ## API
 
-[API link]()
+[API link](https://prodigar-api.vercel.app/)
 
 ## Tech Stack
 
