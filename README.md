@@ -6,13 +6,13 @@ the frontend can fetch data from de DB that refer to a user, a published item or
 a contact form from another user. Also, it permits to search items near by your
 location through Algolia DB.
 
-## Backend Demo
+## Documentation
 
-[Postman](https://documenter.getpostman.com/view/20242333/2s935poiBJ)
+[Postman](https://documenter.getpostman.com/view/20242333/2s935poiBJ 'Postman documentation')
 
 ## API
 
-[API link](https://prodigar-api.vercel.app/)
+[API link](https://prodigar-api.vercel.app/ 'API on vercel')
 
 ## Tech Stack
 
