@@ -17,7 +17,8 @@
 		],
 		"environmentVariables": {
 			"TESTING": "true",
-			"JWT_SECRET": "f55454t48s1991g9954G"
+			"JWT_SECRET": "f55454t48s1991g9954G",
+			"SENDGRID_CREDS_APIKEY": "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"
 		},
 		"extensions": {
 			"ts": "module"
