@@ -1,7 +1,7 @@
-import { Item } from '../models'
-import { cloudinary } from '../lib/cloudinary'
-import { index } from '../lib/algolia'
-import { NewItemData, LocationData } from '../lib/types'
+import { Item } from '@/models/index'
+import { cloudinary } from '@/lib/cloudinary'
+import { index } from '@/lib/algolia'
+import { NewItemData, LocationData } from '@/lib/types'
 import { bodyToIndex } from '@/lib/helpers'
 
 //Create an item
@@ -90,7 +90,8 @@ export async function updateItem(itemId: number, data: NewItemData) {
 		}
 		const indexFormatted = bodyToIndex(dataForIndex, itemId)
 		const indexUpdated = await index.partialUpdateObject(indexFormatted)
-		return itemUpdated
+		const newItemData = await Item.findByPk(itemId)
+		return newItemData
 	} else {
 		const itemUpdated = await Item.update(
 			{

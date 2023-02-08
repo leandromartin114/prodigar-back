@@ -1,6 +1,6 @@
-import { Auth } from '../models'
-import { User } from '../models'
-import { Item } from '../models'
+import { Auth } from '@/models/index'
+import { User } from '@/models/index'
+import { Item } from '@/models/index'
 import { UserUpdateData } from '@/lib/types'
 
 //getting the user data

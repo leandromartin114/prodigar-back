@@ -1,4 +1,4 @@
-import { NewItemData } from '../lib/types'
+import { NewItemData } from '@/lib/types'
 
 export function bodyToIndex(body: NewItemData, id: number) {
 	const result: any = {}

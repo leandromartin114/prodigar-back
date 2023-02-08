@@ -14,7 +14,7 @@ type NewItemData = {
 	fullName: string
 	title: string
 	description: string
-	imgURL: string
+	imgURL?: string
 	lat: number
 	lng: number
 	state: string

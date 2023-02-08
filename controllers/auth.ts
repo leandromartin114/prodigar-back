@@ -1,5 +1,5 @@
-import { Auth } from '../models'
-import { User } from '../models'
+import { Auth } from '@/models/index'
+import { User } from '@/models/index'
 import { addMinutes, isCodeExpired } from '@/lib/date-fns'
 import { generateToken } from '@/lib/jwt'
 import { random } from '@/lib/random-seed'
