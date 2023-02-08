@@ -1,5 +1,7 @@
 import sgMail from '@sendgrid/mail'
 import { NewContactData } from 'lib/types'
+import * as dotenv from 'dotenv'
+dotenv.config()
 
 sgMail.setApiKey(process.env.SENDGRID_CREDS_APIKEY as string)
 

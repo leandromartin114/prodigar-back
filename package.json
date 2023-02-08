@@ -16,9 +16,7 @@
 			"--experimental-specifier-resolution=node"
 		],
 		"environmentVariables": {
-			"TESTING": "true",
-			"JWT_SECRET": "f55454t48s1991g9954G",
-			"SENDGRID_CREDS_APIKEY": "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"
+			"TESTING": "true"
 		},
 		"extensions": {
 			"ts": "module"
@@ -38,6 +36,7 @@
 		"algoliasearch": "^4.14.3",
 		"cloudinary": "^1.33.0",
 		"date-fns": "^2.29.3",
+		"dotenv": "^16.0.3",
 		"esbuild-node-loader": "^0.8.0",
 		"jsonwebtoken": "^9.0.0",
 		"micro-method-router": "^0.1.0",
