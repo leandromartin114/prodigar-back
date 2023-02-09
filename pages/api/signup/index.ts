@@ -16,7 +16,9 @@ async function postHandler(req: NextApiRequest, res: NextApiResponse) {
 			const code = await sendCode(req.body.email)
 			res
 				.status(200)
-				.send({ message: 'the code ' + code + 'was sent to ' + req.body.email })
+				.send({
+					message: 'the code ' + code + ' was sent to ' + req.body.email,
+				})
 		}
 	} catch (error) {
 		res.status(400).send({ message: 'error: ' + error })

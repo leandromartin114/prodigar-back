@@ -12,7 +12,7 @@ async function postHandler(req: NextApiRequest, res: NextApiResponse) {
 		if (code) {
 			res
 				.status(200)
-				.send({ message: 'the code ' + code + 'was sent to ' + email })
+				.send({ message: 'the code ' + code + ' was sent to ' + email })
 		} else {
 			res.status(400).send({ message: "the user doesn't exist" })
 		}
