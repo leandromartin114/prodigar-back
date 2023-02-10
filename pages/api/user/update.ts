@@ -12,6 +12,11 @@ import { userBodySchema } from '@/lib/schemas'
 async function putHandler(req: NextApiRequest, res: NextApiResponse, token) {
 	try {
 		const newUserData = await updateUser(token.userId, req.body)
+		if (newUserData === 'Forbidden') {
+			res
+				.status(400)
+				.send({ message: 'The email is already in use by another user' })
+		}
 		res.status(200).send(newUserData)
 	} catch (error) {
 		res.status(400).send({ message: 'error ' + error })

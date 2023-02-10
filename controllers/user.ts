@@ -15,6 +15,10 @@ export async function getUserData(userId: number) {
 
 //updating a user
 export async function updateUser(userId: number, data: UserUpdateData) {
+	const existUser = await User.findOne({ where: { email: data.email } })
+	if (existUser && existUser.get('id') !== userId) {
+		return 'Forbidden'
+	}
 	try {
 		const dataForUser = {
 			...data,
