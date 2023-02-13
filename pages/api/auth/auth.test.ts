@@ -1,12 +1,12 @@
 import test from 'ava'
 import { describe } from 'node:test'
 import request from 'supertest'
-
-const API_URL = 'https://prodigar-api.vercel.app'
+import * as dotenv from 'dotenv'
+dotenv.config()
 
 describe('Auth tests', async () => {
 	const email = 'leandromartin_17@hotmail.com'
-	const res = await request(API_URL)
+	const res = await request(process.env.API_URL)
 		.post('/api/auth/login')
 		.set('Accept', 'application/json')
 		.set('Content-Type', 'application/json')
@@ -25,7 +25,7 @@ describe('Auth tests', async () => {
 
 	test('token endpoint should return auth token into an obj', async (t) => {
 		t.plan(2)
-		const res2 = await request(API_URL)
+		const res2 = await request(process.env.API_URL)
 			.post('/api/auth/token')
 			.set('Accept', 'application/json')
 			.set('Content-Type', 'application/json')

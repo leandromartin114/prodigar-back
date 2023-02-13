@@ -7,7 +7,7 @@
 		"build": "next build",
 		"start": "next start",
 		"lint": "next lint",
-		"test": "ava ./pages/api/auth/auth.test.ts"
+		"test": "ava"
 	},
 	"type": "module",
 	"ava": {
