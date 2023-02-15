@@ -7,12 +7,12 @@ test('Create Contact', async (t) => {
 		fullName: 'Juan',
 		phoneNumber: 2612222222,
 		email: 'juancito@email.com',
-		message: 'Necesito una silla para mi escritorio',
+		message: 'Necesito la mesa',
 		itemTitle: 'Silla',
 		itemEmail: 'leandromartin_17@hotmail.com',
-		itemId: 5,
+		itemId: 8,
 	}
-	const out = await createContact(5, mockData)
+	const out = await createContact(8, mockData)
 	const res = out.isNewRecord
 	t.deepEqual(payload, res)
 })
